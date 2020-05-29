@@ -6,6 +6,7 @@
     <Authors>CreativeCoders</Authors>
     <LangVersion>latest</LangVersion>
     <Description>Basic core classes and types</Description>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
