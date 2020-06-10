@@ -1,0 +1,16 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<Button ButtonElementType="@(ButtonElementType.Div)" OnClick="@(x => IncrementCount())" class="btn btn-primary">Click me</Button>
+
+@code {
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
