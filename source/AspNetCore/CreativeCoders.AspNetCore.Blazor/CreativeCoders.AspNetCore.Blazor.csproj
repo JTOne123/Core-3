@@ -3,8 +3,6 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <RazorLangVersion>3.0</RazorLangVersion>
-    <AssemblyName>CreativeCoders.AspNetCore.Blazor</AssemblyName>
-    <RootNamespace>CreativeCoders.AspNetCore.Blazor</RootNamespace>
   </PropertyGroup>
 
 

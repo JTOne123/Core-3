@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\AspNetCore\Blazor\Blazor.csproj" />
+    <ProjectReference Include="..\..\AspNetCore\CreativeCoders.AspNetCore.Blazor.Components\CreativeCoders.AspNetCore.Blazor.Components.csproj" />
+    <ProjectReference Include="..\..\AspNetCore\CreativeCoders.AspNetCore.Blazor\CreativeCoders.AspNetCore.Blazor.csproj" />
   </ItemGroup>
 
 </Project>
