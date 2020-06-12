@@ -196,7 +196,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorWebAssemblySampleApp"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreativeCoders.AspNetCore.Blazor", "AspNetCore\CreativeCoders.AspNetCore.Blazor\CreativeCoders.AspNetCore.Blazor.csproj", "{3D6B25D4-1358-4043-9B94-0E9EB27DF9C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreativeCoders.AspNetCore.Blazor.Components", "AspNetCore\CreativeCoders.AspNetCore.Blazor.Components\CreativeCoders.AspNetCore.Blazor.Components.csproj", "{6D3A5186-F8A2-4239-BCFA-A70B5849D3E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CreativeCoders.AspNetCore.Blazor.Components", "AspNetCore\CreativeCoders.AspNetCore.Blazor.Components\CreativeCoders.AspNetCore.Blazor.Components.csproj", "{6D3A5186-F8A2-4239-BCFA-A70B5849D3E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

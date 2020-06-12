@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Components.Web;
 
 namespace CreativeCoders.AspNetCore.Blazor
 {
-    public class CustomElement : ComponentBase
+    public class CustomHtmlElement : ComponentBase
     {
         [Parameter]
         public string Tag { get; set; }

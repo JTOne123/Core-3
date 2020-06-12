@@ -5,7 +5,7 @@
 
 <p>Current count: @currentCount</p>
 
-<Button ButtonElementType="@(ButtonElementType.Div)" OnClick="@(x => IncrementCount())" class="btn-primary">Click me</Button>
+<CcCustomButton ElementType="@(ButtonElementType.Div)" Clicked="@(x => IncrementCount())" class="btn-primary">Click me</CcCustomButton>
 
 @code {
     private int currentCount = 0;

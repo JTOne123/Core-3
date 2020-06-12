@@ -6,25 +6,30 @@ namespace CreativeCoders.AspNetCore.Blazor.Components.Buttons
 {
     public class ButtonBase : ClassContainerControlBase
     {
-        public ButtonBase()
+        private const string ButtonClassPrefix = "btn-";
+
+        private const string OutlinedButtonClassPrefix = "btn-outline-";
+
+        protected override void SetupClasses()
         {
+            base.SetupClasses();
+
             Classes
                 .AddClass("btn")
-                .AddClass(() => Kind.ToText());
+                .AddClass(() => (IsOutlined ? OutlinedButtonClassPrefix : ButtonClassPrefix) + Kind.ToText())
+                .AddClass(() => Size.ToText());
         }
 
         [Parameter]
-        public EventCallback<MouseEventArgs> OnClick { get; set; }
-
-        [Parameter]
-        public ButtonElementType ButtonElementType { get; set; }
-
-        [Parameter]
-        public ButtonType ButtonType { get; set; }
+        public EventCallback<MouseEventArgs> Clicked { get; set; }
 
         [Parameter]
         public ButtonKind Kind { get; set; }
 
-        //public string ClassName => Classes.Build();
+        [Parameter] 
+        public bool IsOutlined { get; set; }
+
+        [Parameter]
+        public ButtonSize Size { get; set; }
     }
 }

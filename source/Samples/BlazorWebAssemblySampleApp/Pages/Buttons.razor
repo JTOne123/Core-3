@@ -1,0 +1,29 @@
+﻿@page "/buttons"
+
+<h3>Buttons</h3>
+
+<div>
+    CcButton: <CcButton Clicked="@FirstButtonClicked">@FirstButtonText</CcButton><br/>
+    LinkButton: <CcLinkButton href="/">Goto Index</CcLinkButton><br/>
+    CcCustomButton: <CcCustomButton Size="@ButtonSize.Large" ElementType="@ButtonElementType.Div" Clicked="@CustomButtonClicked">Custom Div button</CcCustomButton><br/>
+    <div>@CustomText</div>
+</div>
+
+@code {
+    public string FirstButtonText = "First Button";
+
+    public string CustomText = "";
+
+    private int _customClickedCounter;
+
+    public void FirstButtonClicked()
+    {
+        FirstButtonText += "!";
+    }
+
+    public void CustomButtonClicked()
+    {
+        _customClickedCounter++;
+        CustomText = $"Custom Button clicked {_customClickedCounter} time(s)";
+    }
+}

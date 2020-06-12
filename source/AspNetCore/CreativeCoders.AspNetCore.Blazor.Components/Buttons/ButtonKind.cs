@@ -2,26 +2,26 @@
 
 namespace CreativeCoders.AspNetCore.Blazor.Components.Buttons
 {
-    [EnumStringValue("btn-primary")]
+    [EnumStringValue("primary")]
     public enum ButtonKind
     {
-        [EnumStringValue("btn-primary")]
+        [EnumStringValue("primary")]
         Primary,
-        [EnumStringValue("btn-secondary")]
+        [EnumStringValue("secondary")]
         Secondary,
-        [EnumStringValue("btn-success")]
+        [EnumStringValue("success")]
         Success,
-        [EnumStringValue("btn-danger")]
+        [EnumStringValue("danger")]
         Danger,
-        [EnumStringValue("btn-warning")]
+        [EnumStringValue("warning")]
         Warning,
-        [EnumStringValue("btn-warning")]
+        [EnumStringValue("warning")]
         Info,
-        [EnumStringValue("btn-light")]
+        [EnumStringValue("light")]
         Light,
-        [EnumStringValue("btn-dark")]
+        [EnumStringValue("dark")]
         Dark,
-        [EnumStringValue("btn-link")]
+        [EnumStringValue("link")]
         Link
     }
 }

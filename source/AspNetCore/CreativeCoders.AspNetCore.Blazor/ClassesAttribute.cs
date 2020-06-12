@@ -28,24 +28,12 @@ namespace CreativeCoders.AspNetCore.Blazor
 
         public ClassesAttribute AddClassIf(Func<bool> condition, string className)
         {
-            _items.Add(() => condition() ? className : null);
-
-            return this;
+            return AddClass(() => condition() ? className : null);
         }
 
-        public ClassesAttribute AddFromAttributes(IDictionary<string, object> attributes)
+        public ClassesAttribute AddClassIf(Func<bool> condition, Func<string> className)
         {
-            if (attributes == null)
-            {
-                return this;
-            }
-
-            if (attributes.TryGetValue("class", out var className))
-            {
-                AddClass(className.ToString());
-            }
-
-            return this;
+            return AddClass(() => condition() ? className() : null);
         }
 
         public string Build()

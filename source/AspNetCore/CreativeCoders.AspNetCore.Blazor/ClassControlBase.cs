@@ -5,21 +5,21 @@
         public ClassControlBase()
         {
             Classes = new ClassesAttribute();
+        }
 
+        protected override void OnInitialized()
+        {
+            base.OnInitialized();
+
+            SetupClasses();
+        }
+
+        protected virtual void SetupClasses()
+        {
             Classes.AddClass(() =>
-            {
-                if (CustomAttributes == null)
-                {
-                    return null;
-                }
-
-                if (CustomAttributes.TryGetValue("class", out var className))
-                {
-                    return className.ToString();
-                }
-
-                return null;
-            });
+                CustomAttributes != null && CustomAttributes.TryGetValue("class", out var className)
+                    ? className.ToString()
+                    : null);
         }
 
         public ClassesAttribute Classes { get; }

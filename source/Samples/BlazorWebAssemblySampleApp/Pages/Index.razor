@@ -8,19 +8,40 @@
 </div>
 
 <div>
-    <Button class="btn-lg" Kind="@ButtonKind.Primary" ButtonElementType="@ButtonElementType.Div">TestButtonContent</Button>
-    <Button Kind="@ButtonKind.Primary" ButtonElementType="@ButtonElementType.Button">TestButtonContent</Button>
-    <Button Kind="@ButtonKind.Primary" ButtonElementType="@ButtonElementType.Link">TestButtonContent</Button>
+    <div class="btn-group">
+        <input type="text" />
+        <div class="dropdown-menu"></div>
+    </div>
 
-    <Button Kind="@ButtonKind.Success" ButtonElementType="@ButtonElementType.Div">TestButtonContent</Button>
-    <Button Kind="@ButtonKind.Success" ButtonElementType="@ButtonElementType.Button">TestButtonContent</Button>
-    <Button Kind="@ButtonKind.Success" ButtonElementType="@ButtonElementType.Link">TestButtonContent</Button>
+    <CcCustomButton class="btn-lg" Kind="@ButtonKind.Primary" ElementType="@ButtonElementType.Div">TestButtonContent</CcCustomButton>
+    <CcCustomButton Kind="@ButtonKind.Primary" ElementType="@ButtonElementType.Button">TestButtonContent</CcCustomButton>
+    <CcCustomButton Kind="@ButtonKind.Primary" ElementType="@ButtonElementType.Link">TestButtonContent</CcCustomButton>
 
-    <Button ButtonElementType="@ButtonElementType.Div">TestButtonContent</Button>
-    <Button ButtonElementType="@ButtonElementType.Button">TestButtonContent</Button>
-    <Button ButtonElementType="@ButtonElementType.Link">TestButtonContent</Button>
+    <CcCustomButton Kind="@ButtonKind.Success" ElementType="@ButtonElementType.Div">TestButtonContent</CcCustomButton>
+    <CcCustomButton Kind="@ButtonKind.Success" ElementType="@ButtonElementType.Button">TestButtonContent</CcCustomButton>
+    <CcCustomButton Kind="@ButtonKind.Success" ElementType="@ButtonElementType.Link">TestButtonContent</CcCustomButton>
+
+    <CcCustomButton ElementType="@ButtonElementType.Div" IsOutlined="@IsOutlined">TestButtonContent</CcCustomButton>
+    <CcCustomButton ElementType="@ButtonElementType.Button" IsOutlined="@IsOutlined">TestButtonContent</CcCustomButton>
+    <CcCustomButton ElementType="@ButtonElementType.Link" IsOutlined="@IsOutlined">TestButtonContent</CcCustomButton>
+
+    <CcCustomButton ElementType="@ButtonElementType.Link" IsOutlined="@IsOutlined" Clicked="@ButtonClicked">TestButtonContent</CcCustomButton>
+</div>
+
+<div>
+    <CcLinkButton href="counter">Goto Counter</CcLinkButton>
 </div>
 
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+
+@code
+{
+    public bool IsOutlined;
+
+    public void ButtonClicked()
+    {
+        IsOutlined = !IsOutlined;
+    }
+}

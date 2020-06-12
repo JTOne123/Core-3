@@ -1,5 +1,0 @@
-﻿@using CreativeCoders.AspNetCore.Blazor
-@using CreativeCoders.Core.Enums
-@inherits ButtonBase
-
-<CustomElement Tag="@ButtonElementType.ToText()" @onclick="OnClick" type="@ButtonType.ToText()" @attributes="@CustomAttributes" class="@Classes.Build()">@(ChildContent)</CustomElement>

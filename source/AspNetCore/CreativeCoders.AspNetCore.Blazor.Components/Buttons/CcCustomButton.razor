@@ -1,0 +1,4 @@
+﻿@using CreativeCoders.Core.Enums
+@inherits CcCustomButtonBase
+
+<CustomHtmlElement Tag="@ElementType.ToText()" @onclick="Clicked" type="@ButtonType.ToText()" @attributes="@CustomAttributes" class="@Classes.Build()">@(ChildContent)</CustomHtmlElement>
