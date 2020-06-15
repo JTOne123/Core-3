@@ -7,11 +7,34 @@
 
 <CcCustomButton ElementType="@(ButtonElementType.Div)" Clicked="@(x => IncrementCount())" class="btn-primary">Click me</CcCustomButton>
 
+<EditForm Model="this">
+    <InputText class="form-text" @bind-value="Testtext" ValueExpression="() => Testtext"></InputText>
+
+    @*<InputText @bind-Value="Testtext" @bind-Value:event=""></InputText>*@
+
+    <input type="text" class="form-text" @bind-value="Testtext" @bind-value:event="oninput"/>
+</EditForm>
+
+
+
+
 @code {
+    public string Testtext { get; set; } = "Testtext";
+
     private int currentCount = 0;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        base.OnAfterRender(firstRender);
+        Console.WriteLine("Rendered");
+    }
 
     private void IncrementCount()
     {
+        StateHasChanged();
+        StateHasChanged();
         currentCount++;
+        StateHasChanged();
+        StateHasChanged();
     }
 }

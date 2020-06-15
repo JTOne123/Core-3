@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components.Web;
 
 namespace CreativeCoders.AspNetCore.Blazor.Components.Buttons
 {
-    public class ButtonBase : ClassContainerControlBase
+    public class ButtonBase : ContainerControlBase
     {
         private const string ButtonClassPrefix = "btn-";
 
@@ -15,9 +15,9 @@ namespace CreativeCoders.AspNetCore.Blazor.Components.Buttons
             base.SetupClasses();
 
             Classes
-                .AddClass("btn")
-                .AddClass(() => (IsOutlined ? OutlinedButtonClassPrefix : ButtonClassPrefix) + Kind.ToText())
-                .AddClass(() => Size.ToText());
+                .Add("btn")
+                .Add(() => (IsOutlined ? OutlinedButtonClassPrefix : ButtonClassPrefix) + Kind.ToText())
+                .Add(() => Size.ToText());
         }
 
         [Parameter]

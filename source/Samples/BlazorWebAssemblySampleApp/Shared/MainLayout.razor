@@ -1,4 +1,6 @@
-﻿@inherits LayoutComponentBase
+﻿@using BlazorWebAssemblySampleApp.ViewModels
+@inherits LayoutComponentBase
+@inject TestViewModel ViewModel
 
 <div class="sidebar">
     <NavMenu />
@@ -7,6 +9,11 @@
 <div class="main">
     <div class="top-row px-4 auth">
         <LoginDisplay />
+
+        <ViewModelContainer TViewModel="TestViewModel" ViewModel="@ViewModel">
+            <div>@ViewModel.Text</div>
+        </ViewModelContainer>
+        
         <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
     </div>
 
