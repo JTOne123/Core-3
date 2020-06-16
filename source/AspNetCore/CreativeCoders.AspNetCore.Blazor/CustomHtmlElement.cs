@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Web;
 
 namespace CreativeCoders.AspNetCore.Blazor
 {
+    [PublicAPI]
     public class CustomHtmlElement : ComponentBase
     {
         [Parameter]

@@ -3,13 +3,32 @@
 <h3>Buttons</h3>
 
 <div>
-    CcButton: <CcButton Clicked="@FirstButtonClicked">@FirstButtonText</CcButton><br/>
-    LinkButton: <CcLinkButton href="/">Goto Index</CcLinkButton><br/>
-    CcCustomButton: <CcCustomButton Size="@ButtonSize.Large" ElementType="@ButtonElementType.Div" Clicked="@CustomButtonClicked">Custom Div button</CcCustomButton><br/>
+    CcButton: <CcButton Clicked="@FirstButtonClicked">@FirstButtonText</CcButton><br />
+    LinkButton: <CcLinkButton href="/">Goto Index</CcLinkButton><br />
+    CcCustomButton: <CcCustomButton Size="@ButtonSize.Large" ElementType="@ButtonElementType.Div" Clicked="@CustomButtonClicked">Custom Div button</CcCustomButton><br />
+
     <div>@CustomText</div>
+
+    <CcDropDownButton T="string" DropDownItems="@DropDownItems">
+        <ChildContent>Options</ChildContent>
+        <DropDownItemTemplate>
+            <a class="dropdown-item" href="javscript:" @onclick="@(() => SetFirstButtonText(context))">@context</a>
+        </DropDownItemTemplate>
+    </CcDropDownButton>
+
+    <CcDropDownButton T="string" DropDownItems="@SecondDropDownItems">
+        <ChildContent>Settings</ChildContent>
+        <DropDownItemTemplate>
+            <a class="dropdown-item" href="javscript:" @onclick="@(() => SetFirstButtonText(context))">@context</a>
+        </DropDownItemTemplate>
+    </CcDropDownButton>
 </div>
 
 @code {
+    public IReadOnlyCollection<string> DropDownItems { get; set; } = new[] {"First Command", "More Info", "Quit"};
+
+    public IReadOnlyCollection<string> SecondDropDownItems { get; set; } = new[] { "Settings", "Profile", "Packages" };
+
     public string FirstButtonText = "First Button";
 
     public string CustomText = "";
@@ -19,6 +38,11 @@
     public void FirstButtonClicked()
     {
         FirstButtonText += "!";
+    }
+
+    public void SetFirstButtonText(string text)
+    {
+        FirstButtonText = text;
     }
 
     public void CustomButtonClicked()

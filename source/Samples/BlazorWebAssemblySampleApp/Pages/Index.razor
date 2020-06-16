@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using CreativeCoders.AspNetCore.Blazor.Components
+@using BlazorWebAssemblySampleApp.ViewModels
 
 <h1>Hello, world!</h1>
 
@@ -34,10 +35,22 @@
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<ItemsControl TItem="TestViewModel" Items="@ListItems">
+    <ItemTemplate Context="item">
+        <div>@(item.IntValue): @(item.Text)</div>
+    </ItemTemplate>
+</ItemsControl>
 
 @code
 {
+    public IReadOnlyCollection<TestViewModel> ListItems { get; set; }
+        = new[]
+        {
+            new TestViewModel{IntValue = 1, Text = "Hello"},
+            new TestViewModel { IntValue = 2, Text = "World"},
+            new TestViewModel{IntValue = 3, Text = "12345"}
+        };
+
     public bool IsOutlined;
 
     public void ButtonClicked()

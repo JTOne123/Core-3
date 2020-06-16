@@ -1,4 +1,3 @@
-﻿@using CreativeCoders.Core.Enums
-@inherits ButtonBase
+﻿@inherits ButtonBase
 
-<a @onclick="@Clicked" @attributes="@CustomAttributes" class="@Classes.Build()">@ChildContent</a>
+<a @onclick="@Clicked" @attributes="@CustomAttributes" class="@Classes.ToString()">@ChildContent</a>

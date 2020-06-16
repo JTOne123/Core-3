@@ -1,0 +1,17 @@
+﻿@typeparam T
+@inherits CcDropDownBase<T>
+
+    <div class="btn-group">
+        @if (ButtonTemplate == null)
+        {
+            <CcButton class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@ChildContent</CcButton>
+        }
+        else
+        {
+            @ButtonTemplate
+        }
+
+        <div class="dropdown-menu">
+            <ItemsControl T="T" Items="@DropDownItems" ItemTemplate="@DropDownItemTemplate" />
+        </div>
+    </div>

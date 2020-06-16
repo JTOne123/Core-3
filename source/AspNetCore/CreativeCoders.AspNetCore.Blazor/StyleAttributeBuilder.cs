@@ -1,7 +1,9 @@
 ﻿using System;
+using JetBrains.Annotations;
 
 namespace CreativeCoders.AspNetCore.Blazor
 {
+    [PublicAPI]
     public class StyleAttributeBuilder : AttributeBuilder
     {
         public StyleAttributeBuilder() : base(" ", ";") { }

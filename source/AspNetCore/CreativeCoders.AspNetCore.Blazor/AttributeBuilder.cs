@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using CreativeCoders.Core;
+using JetBrains.Annotations;
 
 namespace CreativeCoders.AspNetCore.Blazor
 {
+    [PublicAPI]
     public class AttributeBuilder
     {
         private bool _needsRebuild;
