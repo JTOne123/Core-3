@@ -4,7 +4,7 @@
 
 <h3>ViewModelTest</h3>
 
-<ViewModelContainer TViewModel="TestViewModel" ViewModel="@ViewModel">
+<ViewModelArea TViewModel="TestViewModel" ViewModel="@ViewModel">
     
     <PropertyEditor @bind-EditorValue="@ViewModel.Text"></PropertyEditor>
 
@@ -12,9 +12,9 @@
         <input class="form-text" type="text" @bind-value="@ViewModel.Text" @bind-value:event="oninput" />
     </EditForm>*@
 
-</ViewModelContainer>
+</ViewModelArea>
 
-<ViewModelContainer TViewModel="TestViewModel" ViewModel="@ViewModel">
+<ViewModelArea TViewModel="TestViewModel" ViewModel="@ViewModel">
 
     <PropertyEditor @bind-EditorValue="@ViewModel.Text"></PropertyEditor>
 
@@ -22,7 +22,7 @@
             <input class="form-text" type="text" @bind-value="@ViewModel.Text" @bind-value:event="oninput" />
         </EditForm>*@
 
-</ViewModelContainer>
+</ViewModelArea>
 
 @code {
 

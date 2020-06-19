@@ -6,15 +6,35 @@ using Microsoft.AspNetCore.Components.Web;
 
 namespace CreativeCoders.AspNetCore.Blazor
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   Renders a custom html tag. </summary>
+    ///
+    /// <seealso cref="ComponentBase"/>
+    ///-------------------------------------------------------------------------------------------------
     [PublicAPI]
     public class CustomHtmlElement : ComponentBase
     {
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Gets or sets the tag. </summary>
+        ///
+        /// <value> The tag used for the rendered html element. </value>
+        ///-------------------------------------------------------------------------------------------------
         [Parameter]
         public string Tag { get; set; }
 
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Gets or sets the child content. </summary>
+        ///
+        /// <value> The child content rendered inside the custom html element. </value>
+        ///-------------------------------------------------------------------------------------------------
         [Parameter]
         public RenderFragment ChildContent { get; set; }
 
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Gets or sets the custom attributes. </summary>
+        ///
+        /// <value> Captures all other defined attributes specified in the html element. </value>
+        ///-------------------------------------------------------------------------------------------------
         [Parameter(CaptureUnmatchedValues = true)]
         public IDictionary<string, object> CustomAttributes { get; set; }
 
@@ -24,6 +44,17 @@ namespace CreativeCoders.AspNetCore.Blazor
         [Parameter]
         public bool OnClickStopPropagation { get; set; }
 
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>
+        ///     Renders the component to the supplied
+        ///     <see cref="T:Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder" />.
+        /// </summary>
+        ///
+        /// <param name="builder">  A <see cref="T:Microsoft.AspNetCore.Components.Rendering.RenderTreeBuil
+        ///                         der" /> that will receive the render output. </param>
+        ///
+        /// <seealso cref="Microsoft.AspNetCore.Components.ComponentBase.BuildRenderTree(RenderTreeBuilder)"/>
+        ///-------------------------------------------------------------------------------------------------
         protected override void BuildRenderTree(RenderTreeBuilder builder)
         {
             base.BuildRenderTree(builder);

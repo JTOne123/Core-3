@@ -10,9 +10,9 @@
     <div class="top-row px-4 auth">
         <LoginDisplay />
 
-        <ViewModelContainer TViewModel="TestViewModel" ViewModel="@ViewModel">
+        <ViewModelArea TViewModel="TestViewModel" ViewModel="@ViewModel" ObserveProperties="Text">
             <div>@ViewModel.Text</div>
-        </ViewModelContainer>
+        </ViewModelArea>
         
         <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
     </div>

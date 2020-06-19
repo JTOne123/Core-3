@@ -3,6 +3,11 @@ using Microsoft.AspNetCore.Components;
 
 namespace CreativeCoders.AspNetCore.Blazor
 {
+    ///-------------------------------------------------------------------------------------------------
+    /// <summary>   Blazor base for a control. </summary>
+    ///
+    /// <seealso cref="ComponentBase"/>
+    ///-------------------------------------------------------------------------------------------------
     public class ControlBase : ComponentBase
     {
         public ControlBase()
