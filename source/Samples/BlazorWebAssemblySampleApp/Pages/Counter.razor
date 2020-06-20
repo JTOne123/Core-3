@@ -1,5 +1,6 @@
 ﻿@page "/counter"
 @using CreativeCoders.AspNetCore.Blazor.Components.Buttons
+@using System.Threading
 
 <h1>Counter</h1>
 
@@ -31,10 +32,17 @@
 
     private void IncrementCount()
     {
-        StateHasChanged();
-        StateHasChanged();
+        ThreadPool.QueueUserWorkItem(async state =>
+        {
+            Console.WriteLine($"Thread in Task: {Thread.CurrentThread.ManagedThreadId}");
+            await Task.Delay(4000);
+            currentCount += currentCount;
+            await InvokeAsync(StateHasChanged);
+        });
+
+        Console.WriteLine($"Thread in Event: {Thread.CurrentThread.ManagedThreadId}");
+
         currentCount++;
-        StateHasChanged();
         StateHasChanged();
     }
 }

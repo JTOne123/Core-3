@@ -1,4 +1,5 @@
-﻿using CreativeCoders.Core.Enums;
+﻿using CreativeCoders.AspNetCore.Blazor.Components.Base;
+using CreativeCoders.Core.Enums;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 

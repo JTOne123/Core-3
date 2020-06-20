@@ -4,7 +4,7 @@ using System.Linq;
 using CreativeCoders.Core;
 using JetBrains.Annotations;
 
-namespace CreativeCoders.AspNetCore.Blazor
+namespace CreativeCoders.AspNetCore.Blazor.Components.Base
 {
     [PublicAPI]
     public class AttributeBuilder

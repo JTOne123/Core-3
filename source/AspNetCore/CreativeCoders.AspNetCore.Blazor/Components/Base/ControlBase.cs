@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Components;
 
-namespace CreativeCoders.AspNetCore.Blazor
+namespace CreativeCoders.AspNetCore.Blazor.Components.Base
 {
     ///-------------------------------------------------------------------------------------------------
     /// <summary>   Blazor base for a control. </summary>

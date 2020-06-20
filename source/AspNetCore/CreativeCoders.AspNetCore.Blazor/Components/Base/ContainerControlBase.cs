@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace CreativeCoders.AspNetCore.Blazor
+namespace CreativeCoders.AspNetCore.Blazor.Components.Base
 {
     public class ContainerControlBase : ControlBase
     {

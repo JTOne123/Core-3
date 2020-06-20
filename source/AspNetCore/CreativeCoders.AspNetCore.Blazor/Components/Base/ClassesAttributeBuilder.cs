@@ -1,4 +1,4 @@
-﻿namespace CreativeCoders.AspNetCore.Blazor
+﻿namespace CreativeCoders.AspNetCore.Blazor.Components.Base
 {
     public class ClassesAttributeBuilder : AttributeBuilder
     {

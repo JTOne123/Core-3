@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 using Microsoft.AspNetCore.Components.Web;
 
-namespace CreativeCoders.AspNetCore.Blazor
+namespace CreativeCoders.AspNetCore.Blazor.Components
 {
     ///-------------------------------------------------------------------------------------------------
     /// <summary>   Renders a custom html tag. </summary>

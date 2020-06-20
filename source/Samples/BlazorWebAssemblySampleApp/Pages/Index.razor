@@ -1,6 +1,7 @@
 ﻿@page "/"
 @using CreativeCoders.AspNetCore.Blazor.Components
 @using BlazorWebAssemblySampleApp.ViewModels
+@using System.Threading
 
 <h1>Hello, world!</h1>
 
@@ -35,7 +36,7 @@
 
 Welcome to your new app.
 
-<ItemsControl TItem="TestViewModel" Items="@ListItems">
+<ItemsControl TItem="TestViewModel" ItemsSource="@ListItems">
     <ItemTemplate Context="item">
         <div>@(item.IntValue): @(item.Text)</div>
     </ItemTemplate>
@@ -43,8 +44,10 @@ Welcome to your new app.
 
 @code
 {
-    public IReadOnlyCollection<TestViewModel> ListItems { get; set; }
-        = new[]
+    private Timer _timer;
+
+    public BlazorObservableCollection<TestViewModel> ListItems { get; set; }
+        = new BlazorObservableCollection<TestViewModel>
         {
             new TestViewModel{IntValue = 1, Text = "Hello"},
             new TestViewModel { IntValue = 2, Text = "World"},
@@ -55,6 +58,11 @@ Welcome to your new app.
 
     public void ButtonClicked()
     {
+        if (_timer == null)
+        {
+            _timer = new Timer(state => ListItems.Add(new TestViewModel {IntValue = Environment.TickCount, Text = Environment.TickCount.ToString()}));
+            _timer.Change(500, 1000);
+        }
         IsOutlined = !IsOutlined;
     }
 }

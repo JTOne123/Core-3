@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-namespace CreativeCoders.AspNetCore.Blazor
+namespace CreativeCoders.AspNetCore.Blazor.Components.Base
 {
     [PublicAPI]
     public class StyleAttributeBuilder : AttributeBuilder
