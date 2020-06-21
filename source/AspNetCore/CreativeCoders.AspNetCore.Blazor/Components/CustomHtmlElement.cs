@@ -38,6 +38,11 @@ namespace CreativeCoders.AspNetCore.Blazor.Components
         [Parameter(CaptureUnmatchedValues = true)]
         public IDictionary<string, object> CustomAttributes { get; set; }
 
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Gets or sets a value indicating whether the on click prevent default. </summary>
+        ///
+        /// <value> True if on click prevent default, false if not. </value>
+        ///-------------------------------------------------------------------------------------------------
         [Parameter]
         public bool OnClickPreventDefault { get; set; }
 

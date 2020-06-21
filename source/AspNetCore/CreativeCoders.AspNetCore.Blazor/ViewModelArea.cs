@@ -7,15 +7,23 @@ using CreativeCoders.AspNetCore.Blazor.Components.Base;
 using CreativeCoders.Core;
 using CreativeCoders.Core.Threading;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Rendering;
 
 namespace CreativeCoders.AspNetCore.Blazor
 {
-    public partial class ViewModelArea<TViewModel> : ContainerControlBase, IDisposable
+    public class ViewModelArea<TViewModel> : ContainerControlBase, IDisposable
         where TViewModel : class, INotifyPropertyChanged
     {
         private IList<string> _observeProperties = new List<string>();
 
         private IList<string> _excludeProperties = new List<string>();
+
+        protected override void BuildRenderTree(RenderTreeBuilder builder)
+        {
+            base.BuildRenderTree(builder);
+
+            builder.AddContent(0, ChildContent);
+        }
 
         protected override void OnInitialized()
         {
@@ -34,7 +42,7 @@ namespace CreativeCoders.AspNetCore.Blazor
             base.OnParametersSet();
 
             _observeProperties = new List<string>(
-                ObserveProperties?.Split(new[] {' ', ',', ';'}, StringSplitOptions.RemoveEmptyEntries)
+                ObserveProperties?.Split(new[] { ' ', ',', ';' }, StringSplitOptions.RemoveEmptyEntries)
                     .WhereNotNull() ?? new string[0]);
 
             _excludeProperties = new List<string>(
@@ -54,7 +62,7 @@ namespace CreativeCoders.AspNetCore.Blazor
                 return;
             }
 
-            InvokeAsync(StateHasChanged).FireAndForgetAsync(ex => {});
+            InvokeAsync(StateHasChanged).FireAndForgetAsync(ex => { });
         }
 
         public void Dispose()
