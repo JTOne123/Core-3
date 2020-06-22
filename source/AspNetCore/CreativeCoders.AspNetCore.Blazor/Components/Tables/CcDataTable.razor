@@ -1,0 +1,39 @@
+﻿@using CreativeCoders.Core.Collections
+@typeparam TItem
+@inherits ItemsControlBase<TItem>
+
+<table class="table">
+
+    <thead>
+    <tr>
+        @HeaderTemplate
+    </tr>
+    </thead>
+    <tbody>
+    @if (ItemsSource != null)
+    {
+        
+        @if (ItemTemplate != null)
+        {
+            foreach (var item in ItemsSource)
+            {
+                <tr>
+                    @ItemTemplate(item)
+                </tr>
+            }
+        }
+    }
+    </tbody>
+
+</table>
+
+@code {
+    //[Parameter]
+    //public ExtendedObservableCollection<TItem> ItemsSource { get; set; }
+
+    [Parameter]
+    public RenderFragment HeaderTemplate { get; set; }
+
+    //[Parameter]
+    //public RenderFragment<TItem> RowTemplate { get; set; }
+}
