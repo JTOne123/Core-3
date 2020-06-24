@@ -46,8 +46,7 @@ namespace CreativeCoders.AspNetCore.Blazor.Components
         [Parameter]
         public bool OnClickPreventDefault { get; set; }
 
-        [Parameter]
-        public bool OnClickStopPropagation { get; set; }
+        [Parameter] public bool OnClickStopPropagation { get; set; }
 
         ///-------------------------------------------------------------------------------------------------
         /// <summary>

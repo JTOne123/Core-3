@@ -1,10 +1,10 @@
 ﻿@typeparam T
-@inherits CcDropDownBase<T>
+@inherits DropDownBase<T>
 
     <div class="btn-group">
         @if (ButtonTemplate == null)
         {
-            <CcButton class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@ChildContent</CcButton>
+            <Button class="@Classes.ToString()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">@ChildContent</Button>
         }
         else
         {

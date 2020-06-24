@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 namespace CreativeCoders.AspNetCore.Blazor.Components.Base
 {
     ///-------------------------------------------------------------------------------------------------
-    /// <summary>   Blazor base for a control. </summary>
+    /// <summary>   Base class for a blazor control. </summary>
     ///
     /// <seealso cref="ComponentBase"/>
     ///-------------------------------------------------------------------------------------------------
@@ -29,21 +29,24 @@ namespace CreativeCoders.AspNetCore.Blazor.Components.Base
         {
             Classes.Add(() =>
                 CustomAttributes != null && CustomAttributes.TryGetValue("class", out var className)
-                    ? className.ToString()
+                    ? className?.ToString()
                     : null);
         }
 
         protected virtual void SetupStyles()
         {
             Styles.Add(() =>
-                CustomAttributes != null && CustomAttributes.TryGetValue("style", out var className)
-                    ? className.ToString()
+                CustomAttributes != null && CustomAttributes.TryGetValue("style", out var styleName)
+                    ? styleName?.ToString()
                     : null);
         }
 
         public ClassesAttributeBuilder Classes { get; }
 
         public StyleAttributeBuilder Styles { get; }
+
+        [Parameter]
+        public string Id { get; set; }
 
         [Parameter(CaptureUnmatchedValues = true)]
         public IDictionary<string, object> CustomAttributes { get; set; }

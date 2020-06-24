@@ -4,7 +4,7 @@
 
 <h3>Tables</h3>
 
-<CcDataTable ItemsSource="Items">
+<DataTable ItemsSource="Items">
     <HeaderTemplate>
         <th>IntValue</th>
         <th>Text</th>
@@ -13,12 +13,11 @@
         <td>@context.IntValue</td>
         <td>@context.Text</td>
     </ItemTemplate>
-</CcDataTable>
+</DataTable>
 
-<CcButton Clicked="() => ButtonClicked()">Add items</CcButton>
+<Button Clicked="() => ButtonClicked()">Add items</Button>
 
 @code {
-
     private Timer _timer;
 
     public BlazorObservableCollection<TestViewModel> Items { get; set; } = new BlazorObservableCollection<TestViewModel>

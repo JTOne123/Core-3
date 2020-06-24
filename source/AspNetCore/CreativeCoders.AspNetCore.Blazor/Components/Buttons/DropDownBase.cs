@@ -4,8 +4,16 @@ using Microsoft.AspNetCore.Components;
 
 namespace CreativeCoders.AspNetCore.Blazor.Components.Buttons
 {
-    public class CcDropDownBase<T> : ControlBase
+    public class DropDownBase<T> : ControlBase
     {
+        protected override void SetupClasses()
+        {
+            base.SetupClasses();
+
+            Classes.Add("btn");
+            Classes.Add("dropdown-toggle");
+        }
+
         [Parameter] public RenderFragment ChildContent { get; set; }
 
         [Parameter] public IReadOnlyCollection<T> DropDownItems { get; set; }

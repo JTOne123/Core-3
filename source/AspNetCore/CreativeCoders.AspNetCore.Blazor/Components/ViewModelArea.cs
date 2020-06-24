@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using CreativeCoders.AspNetCore.Blazor.Components;
 using CreativeCoders.AspNetCore.Blazor.Components.Base;
 using CreativeCoders.Core;
 using CreativeCoders.Core.Threading;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Rendering;
 
-namespace CreativeCoders.AspNetCore.Blazor
+namespace CreativeCoders.AspNetCore.Blazor.Components
 {
     public class ViewModelArea<TViewModel> : ContainerControlBase, IDisposable
         where TViewModel : class, INotifyPropertyChanged

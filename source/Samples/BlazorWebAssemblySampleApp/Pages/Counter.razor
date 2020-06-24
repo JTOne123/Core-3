@@ -6,7 +6,7 @@
 
 <p>Current count: @currentCount</p>
 
-<CcCustomButton ElementType="@(ButtonElementType.Div)" Clicked="@(x => IncrementCount())" class="btn-primary">Click me</CcCustomButton>
+<Button ElementType="@(ButtonElementType.Div)" Clicked="@(x => IncrementCount())" class="btn-primary">Click me</Button>
 
 <EditForm Model="this">
     <InputText class="form-text" @bind-value="Testtext" ValueExpression="() => Testtext"></InputText>

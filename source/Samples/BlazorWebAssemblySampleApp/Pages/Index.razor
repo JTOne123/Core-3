@@ -15,23 +15,23 @@
         <div class="dropdown-menu"></div>
     </div>
 
-    <CcCustomButton class="btn-lg" Kind="@ButtonKind.Primary" ElementType="@ButtonElementType.Div">TestButtonContent</CcCustomButton>
-    <CcCustomButton Kind="@ButtonKind.Primary" ElementType="@ButtonElementType.Button">TestButtonContent</CcCustomButton>
-    <CcCustomButton Kind="@ButtonKind.Primary" ElementType="@ButtonElementType.Link">TestButtonContent</CcCustomButton>
+    <Button class="btn-lg" Kind="@ButtonKind.Primary">TestButtonContent</Button>
+    <Button Kind="@ButtonKind.Primary">TestButtonContent</Button>
+    <Button Kind="@ButtonKind.Primary" href="counter">TestButtonContent</Button>
 
-    <CcCustomButton Kind="@ButtonKind.Success" ElementType="@ButtonElementType.Div">TestButtonContent</CcCustomButton>
-    <CcCustomButton Kind="@ButtonKind.Success" ElementType="@ButtonElementType.Button">TestButtonContent</CcCustomButton>
-    <CcCustomButton Kind="@ButtonKind.Success" ElementType="@ButtonElementType.Link">TestButtonContent</CcCustomButton>
+    <Button Kind="@ButtonKind.Success">TestButtonContent</Button>
+    <Button Kind="@ButtonKind.Success">TestButtonContent</Button>
+    <Button Kind="@ButtonKind.Success" Clicked="() => ButtonClicked()">TestButtonContent</Button>
 
-    <CcCustomButton ElementType="@ButtonElementType.Div" IsOutlined="@IsOutlined">TestButtonContent</CcCustomButton>
-    <CcCustomButton ElementType="@ButtonElementType.Button" IsOutlined="@IsOutlined">TestButtonContent</CcCustomButton>
-    <CcCustomButton ElementType="@ButtonElementType.Link" IsOutlined="@IsOutlined">TestButtonContent</CcCustomButton>
+    <Button IsOutlined="@IsOutlined">TestButtonContent</Button>
+    <Button IsOutlined="@IsOutlined">TestButtonContent</Button>
+    <Button IsOutlined="@IsOutlined">TestButtonContent</Button>
 
-    <CcCustomButton ElementType="@ButtonElementType.Link" IsOutlined="@IsOutlined" Clicked="@ButtonClicked">TestButtonContent</CcCustomButton>
+    <Button IsOutlined="@IsOutlined" Clicked="@ButtonClicked">TestButtonContent</Button>
 </div>
 
 <div>
-    <CcLinkButton href="counter">Goto Counter</CcLinkButton>
+    <LinkButton href="counter">Goto Counter</LinkButton>
 </div>
 
 Welcome to your new app.

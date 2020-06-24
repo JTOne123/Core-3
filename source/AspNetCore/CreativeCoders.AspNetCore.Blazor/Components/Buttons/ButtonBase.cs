@@ -21,16 +21,20 @@ namespace CreativeCoders.AspNetCore.Blazor.Components.Buttons
                 .Add(() => Size.ToText());
         }
 
-        [Parameter]
-        public EventCallback<MouseEventArgs> Clicked { get; set; }
+        [Parameter] public EventCallback<MouseEventArgs> Clicked { get; set; }
 
-        [Parameter]
-        public ButtonKind Kind { get; set; }
+        [Parameter] public ButtonKind Kind { get; set; }
 
-        [Parameter] 
-        public bool IsOutlined { get; set; }
-
+        ///-------------------------------------------------------------------------------------------------
+        /// <summary>   Gets or sets the size. </summary>
+        ///
+        /// <value> The size. </value>
+        ///-------------------------------------------------------------------------------------------------
         [Parameter]
         public ButtonSize Size { get; set; }
+
+        [Parameter] public bool IsOutlined { get; set; }
+
+        [Parameter] public bool IsBlockLevel { get; set; }
     }
 }
