@@ -6,7 +6,15 @@
     <Authors>CreativeCoders</Authors>
     <LangVersion>latest</LangVersion>
     <Description>Dynamic proxy based on Caste.Core</Description>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Castle.Core" Version="4.4.1" />
